@@ -105,6 +105,12 @@ SELECT User, Host FROM mysql.user;
 CREATE USER 'someuser'@'localhost' IDENTIFIED BY 'somepassword';
 ```
 
+### Cambiar contraseña de usuario
+
+```sql
+SET PASSWORD FOR '<username>'@'localhost' = PASSWORD('<password>');
+```
+
 ### Otorgar todos los permisos en todas las bases de datos
 
 ```sql
