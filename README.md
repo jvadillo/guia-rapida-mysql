@@ -224,13 +224,19 @@ DROP INDEX LIndex ON users;
 ### Insertar una fila (registro): INSERT
 
 ```sql
-INSERT INTO users (first_name, last_name, email, password, location, dept, is_admin, register_date) values ('Brad', 'Traversy', 'brad@gmail.com', '123456','Massachusetts', 'development', 1, now());
+INSERT INTO users (first_name, last_name, email, is_admin, register_date)
+VALUES ('Brad', 'Traversy', 'brad@gmail.com', 1, now());
 ```
 
 ### Insertar múltiples filas: INSERT
 
 ```sql
-INSERT INTO users (first_name, last_name, email, password, location, dept,  is_admin, register_date) values ('Fred', 'Smith', 'fred@gmail.com', '123456', 'New York', 'design', 0, now()), ('Sara', 'Watson', 'sara@gmail.com', '123456', 'New York', 'design', 0, now()),('Will', 'Jackson', 'will@yahoo.com', '123456', 'Rhode Island', 'development', 1, now()),('Paula', 'Johnson', 'paula@yahoo.com', '123456', 'Massachusetts', 'sales', 0, now()),('Tom', 'Spears', 'tom@yahoo.com', '123456', 'Massachusetts', 'sales', 0, now());
+INSERT INTO users (first_name, last_name, email, is_admin, register_date)
+VALUES ('Fred', 'Smith', 'fred@gmail.com', 0, now()),
+('Sara', 'Watson', 'sara@gmail.com', 0, now()),
+('Will', 'Jackson', 'will@yahoo.com', 1, now()),
+('Paula', 'Johnson', 'paula@yahoo.com', 0, now()),
+('Tom', 'Spears', 'tom@yahoo.com', 0, now());
 ```
 
 ### Consultar todos los registros: SELECT
@@ -384,7 +390,16 @@ CREATE TABLE comments(
 #### Añadir datos a la tabla
 
 ```sql
-INSERT INTO comments(post_id, user_id, body) VALUES (1, 3, 'This is comment one'),(2, 1, 'This is comment two'),(5, 3, 'This is comment three'),(2, 4, 'This is comment four'),(1, 2, 'This is comment five'),(3, 1, 'This is comment six'),(3, 2, 'This is comment six'),(5, 4, 'This is comment seven'),(2, 3, 'This is comment seven');
+INSERT INTO comments(post_id, user_id, body)
+VALUES (1, 3, 'This is comment one'),
+(2, 1, 'This is comment two'),
+(5, 3, 'This is comment three'),
+(2, 4, 'This is comment four'),
+(1, 2, 'This is comment five'),
+(3, 1, 'This is comment six'),
+(3, 2, 'This is comment six'),
+(5, 4, 'This is comment seven'),
+(2, 3, 'This is comment seven');
 ```
 
 ### LEFT JOIN
