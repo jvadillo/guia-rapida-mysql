@@ -144,6 +144,13 @@ ALTER TABLE users ADD age VARCHAR(3);
 ALTER TABLE users MODIFY COLUMN age INT(3);
 ```
 
+### Crear y borrar índices
+
+```sql
+CREATE INDEX LIndex On users(location);
+DROP INDEX LIndex ON users;
+```
+
 ## Registros
 ### Insertar una fila (registro): INSERT
 
@@ -173,48 +180,47 @@ SELECT * FROM users WHERE is_admin = 1;
 SELECT * FROM users WHERE is_admin > 0;
 ```
 
-### Borrar registros
+### Borrar registros: DELETE
 
 ```sql
 DELETE FROM users WHERE id = 6;
 ```
 
-### Actualizar registros
+### Actualizar registros: UPDATE
 
 ```sql
 UPDATE users SET email = 'freddy@gmail.com' WHERE id = 2;
 
 ```
 
-
-### Order By (Sort)
+### Ordenar registros: ORDER BY
 
 ```sql
 SELECT * FROM users ORDER BY last_name ASC;
 SELECT * FROM users ORDER BY last_name DESC;
 ```
 
-### Concatenate Columns
+### Concatenar columnas: CONCAT
 
 ```sql
 SELECT CONCAT(first_name, ' ', last_name) AS 'Name', dept FROM users;
 
 ```
 
-### Select Distinct Rows
+### Consultar filas distintas: DISTINCT
 
 ```sql
 SELECT DISTINCT location FROM users;
 
 ```
 
-## Between (Select Range)
+### Consultar por rango: BETWEEN
 
 ```sql
 SELECT * FROM users WHERE age BETWEEN 20 AND 25;
 ```
 
-## Like (Searching)
+### Consultas similares: LIKE
 
 ```sql
 SELECT * FROM users WHERE dept LIKE 'd%';
@@ -223,26 +229,41 @@ SELECT * FROM users WHERE dept LIKE '%t';
 SELECT * FROM users WHERE dept LIKE '%e%';
 ```
 
-## Not Like
+### Distinto a: NOT LIKE
 
 ```sql
 SELECT * FROM users WHERE dept NOT LIKE 'd%';
 ```
 
-## IN
+### IN
 
 ```sql
 SELECT * FROM users WHERE dept IN ('design', 'sales');
 ```
 
-## Create & Remove Index
+### Funciones agregadas: COUNT, MAX, MIN, SUM, ...
 
 ```sql
-CREATE INDEX LIndex On users(location);
-DROP INDEX LIndex ON users;
+SELECT COUNT(id) FROM users;
+SELECT MAX(age) FROM users;
+SELECT MIN(age) FROM users;
+SELECT SUM(age) FROM users;
+SELECT UCASE(first_name), LCASE(last_name) FROM users;
+
 ```
 
-## New Table With Foreign Key (Posts)
+### Agrupar resultados: GROUP BY
+
+```sql
+SELECT age, COUNT(age) FROM users GROUP BY age;
+SELECT age, COUNT(age) FROM users WHERE age > 20 GROUP BY age;
+SELECT age, COUNT(age) FROM users GROUP BY age HAVING count(age) >=2;
+
+```
+
+## Relaciones entre tablas
+
+### Crear tabla con cláve foránea (FOREIGN KEY)
 
 ```sql
 CREATE TABLE posts(
@@ -256,13 +277,13 @@ id INT AUTO_INCREMENT,
 );
 ```
 
-## Add Data to Posts Table
+#### Añadir datos a la tabla
 
 ```sql
 INSERT INTO posts(user_id, title, body) VALUES (1, 'Post One', 'This is post one'),(3, 'Post Two', 'This is post two'),(1, 'Post Three', 'This is post three'),(2, 'Post Four', 'This is post four'),(5, 'Post Five', 'This is post five'),(4, 'Post Six', 'This is post six'),(2, 'Post Seven', 'This is post seven'),(1, 'Post Eight', 'This is post eight'),(3, 'Post Nine', 'This is post none'),(4, 'Post Ten', 'This is post ten');
 ```
 
-## INNER JOIN
+### INNER JOIN
 
 ```sql
 SELECT
@@ -276,7 +297,7 @@ ON users.id = posts.user_id
 ORDER BY posts.title;
 ```
 
-## New Table With 2 Foriegn Keys
+### Crear tabla con múltiples claves foráneas
 
 ```sql
 CREATE TABLE comments(
@@ -291,13 +312,13 @@ CREATE TABLE comments(
 );
 ```
 
-## Add Data to Comments Table
+#### Añadir datos a la tabla
 
 ```sql
 INSERT INTO comments(post_id, user_id, body) VALUES (1, 3, 'This is comment one'),(2, 1, 'This is comment two'),(5, 3, 'This is comment three'),(2, 4, 'This is comment four'),(1, 2, 'This is comment five'),(3, 1, 'This is comment six'),(3, 2, 'This is comment six'),(5, 4, 'This is comment seven'),(2, 3, 'This is comment seven');
 ```
 
-## Left Join
+### LEFT JOIN
 
 ```sql
 SELECT
@@ -309,7 +330,7 @@ ORDER BY posts.title;
 
 ```
 
-## Join Multiple Tables
+### JOIN de múltiples tablas
 
 ```sql
 SELECT
@@ -324,22 +345,4 @@ ORDER BY posts.title;
 
 ```
 
-## Aggregate Functions
 
-```sql
-SELECT COUNT(id) FROM users;
-SELECT MAX(age) FROM users;
-SELECT MIN(age) FROM users;
-SELECT SUM(age) FROM users;
-SELECT UCASE(first_name), LCASE(last_name) FROM users;
-
-```
-
-## Group By
-
-```sql
-SELECT age, COUNT(age) FROM users GROUP BY age;
-SELECT age, COUNT(age) FROM users WHERE age > 20 GROUP BY age;
-SELECT age, COUNT(age) FROM users GROUP BY age HAVING count(age) >=2;
-
-```
