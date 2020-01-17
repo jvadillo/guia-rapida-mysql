@@ -1,6 +1,60 @@
 # guia-rapida-mysql
-Todo lo que necesitas saber de MySQL en una breve guía.
+Guía rápida de MySQL donde podrás encontrar la información necesaria y los comando más utilizados.
 
+## Conocimientos previos
+Esta guía no pretende explicar los conceptos básicos de las bases de datos relacionales, por lo que está enfocada a personas que ya cuenten con un conocimiento básico sobre bases de datos relacionales.
+
+## Tabla de contenido
+- [Configuración](#configuraci-n)
+  * [Instalación Linux](#instalaci-n-linux)
+  * [Ubicación de MySQL](#ubicaci-n-de-mysql)
+  * [Añadir MySQL al PATH](#a-adir-mysql-al-path)
+- [Conexión](#conexi-n)
+  * [Acceder](#acceder)
+  * [Salir](#salir)
+- [Gestión de usuarios](#gesti-n-de-usuarios)
+  * [Mostrar usuarios](#mostrar-usuarios)
+  * [Crear usuario](#crear-usuario)
+  * [Otorgar todos los permisos en todas las bases de datos](#otorgar-todos-los-permisos-en-todas-las-bases-de-datos)
+  * [Mostrar permisos](#mostrar-permisos)
+  * [Eliminar permisos](#eliminar-permisos)
+  * [Borrar usuario](#borrar-usuario)
+- [Bases de datos](#bases-de-datos)
+  * [Mostrar bases de datos](#mostrar-bases-de-datos)
+  * [Crear una base de datos](#crear-una-base-de-datos)
+  * [Borrar una base de datos](#borrar-una-base-de-datos)
+  * [Seleccionar una base de datos](#seleccionar-una-base-de-datos)
+- [Tablas](#tablas)
+  * [Crear una tabla](#crear-una-tabla)
+  * [Borrar una tabla](#borrar-una-tabla)
+  * [Mostrar tablas](#mostrar-tablas)
+  * [Añadir una nueva columna](#a-adir-una-nueva-columna)
+  * [Modificar una columna](#modificar-una-columna)
+  * [Crear y borrar índices](#crear-y-borrar--ndices)
+- [Registros](#registros)
+  * [Insertar una fila (registro): INSERT](#insertar-una-fila--registro---insert)
+  * [Insertar múltiples filas: INSERT](#insertar-m-ltiples-filas--insert)
+  * [Consultar todos los registros: SELECT](#consultar-todos-los-registros--select)
+  * [Consultas con condiciones: WHERE](#consultas-con-condiciones--where)
+  * [Borrar registros: DELETE](#borrar-registros--delete)
+  * [Actualizar registros: UPDATE](#actualizar-registros--update)
+  * [Ordenar registros: ORDER BY](#ordenar-registros--order-by)
+  * [Concatenar columnas: CONCAT](#concatenar-columnas--concat)
+  * [Consultar filas distintas: DISTINCT](#consultar-filas-distintas--distinct)
+  * [Consultar por rango: BETWEEN](#consultar-por-rango--between)
+  * [Consultas similares: LIKE](#consultas-similares--like)
+  * [Distinto a: NOT LIKE](#distinto-a--not-like)
+  * [IN](#in)
+  * [Funciones agregadas: COUNT, MAX, MIN, SUM, ...](#funciones-agregadas--count--max--min--sum--)
+  * [Agrupar resultados: GROUP BY](#agrupar-resultados--group-by)
+- [Relaciones entre tablas](#relaciones-entre-tablas)
+  * [Crear tabla con cláve foránea (FOREIGN KEY)](#crear-tabla-con-cl-ve-for-nea--foreign-key-)
+    + [Añadir datos a la tabla](#a-adir-datos-a-la-tabla)
+  * [INNER JOIN](#inner-join)
+  * [Crear tabla con múltiples claves foráneas](#crear-tabla-con-m-ltiples-claves-for-neas)
+    + [Añadir datos a la tabla](#a-adir-datos-a-la-tabla-1)
+  * [LEFT JOIN](#left-join)
+  * [JOIN de múltiples tablas](#join-de-m-ltiples-tablas)
 
 ## Configuración
 
@@ -345,4 +399,11 @@ ORDER BY posts.title;
 
 ```
 
+## Licencia
+
+![Licencia_img](http://mirrors.creativecommons.org/presskit/buttons/80x15/png/by-nc-sa.png)
+
+Este repositorio esta licenciado como [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es_ES) aunque no necesariamente las imágenes que contiene.
+
+El código que contiene este [repositorio](https://github.com/jvadillo/aprende-python-desde-cero-a-experto/) se encuenta bajo la licencia [GNU GPL-3.0](https://github.com/jvadillo/aprende-python-desde-cero-a-experto/blob/master/LICENSE)
 
