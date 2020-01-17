@@ -111,12 +111,21 @@ CREATE USER 'someuser'@'localhost' IDENTIFIED BY 'somepassword';
 SET PASSWORD FOR '<username>'@'localhost' = PASSWORD('<password>');
 ```
 
-### Otorgar todos los permisos en todas las bases de datos
+### Conceder todos los permisos en todas las bases de datos
 
 ```sql
 GRANT ALL PRIVILEGES ON * . * TO 'someuser'@'localhost';
 FLUSH PRIVILEGES;
 ```
+
+
+### Conceder permisos concretos en una base de datos
+
+```sql
+GRANT SELECT,UPDATE,INSERT,DELETE ON <database_name>.* TO '<username>'@'localhost';
+FLUSH PRIVILEGES;
+```
+
 
 ### Mostrar permisos
 
