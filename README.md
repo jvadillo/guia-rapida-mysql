@@ -388,7 +388,14 @@ ORDER BY posts.title;
 
 ```
 
+## Colabora
+Hay muchas formas de contribuir con esta guía y ayudar a mejorarla:
+- Notifica los errores que encuentres.
+- Sugiere nuevos ejemplos o apartados.
+- Compártela con tus conocidos o en redes sociales.
+
 ## Licencia
+Guía creada por Jon Vadillo ([@JonVadillo](https://twitter.com/JonVadillo)), más información en [www.jonvadillo.com/learn](https://jonvadillo.com)
 
 ![Licencia_img](http://mirrors.creativecommons.org/presskit/buttons/80x15/png/by-nc-sa.png)
 
