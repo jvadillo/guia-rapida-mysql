@@ -18,10 +18,13 @@ Esta guía no pretende explicar los conceptos básicos de las bases de datos rel
 ## Configuración
 
 ### Instalación Linux
+```
 sudo apt-get update
+sudo apt upgrade
 sudo apt-get install -y mysql-server
 sudo mysql_secure_installation
-sudo mysql_install_db
+```
+Nota: si solo quieres conectarte a una base de datos MySQL remota en lugar de albergar una base de datos en tu máquina, es suficiente con instalar el cliente MySQL con el siguiente comando: `sudo apt install mysql-client`
 
 ### Ubicación de MySQL
 * Mac             */usr/local/mysql/bin*
